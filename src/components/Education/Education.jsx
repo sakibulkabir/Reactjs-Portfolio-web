@@ -1,5 +1,5 @@
-
-import { education } from "../../constants"; // Import the education data
+import { education } from "../../constants";
+import { motion } from "framer-motion";
 
 const Education = () => {
   return (
@@ -8,48 +8,62 @@ const Education = () => {
       className="py-24 pb-24 px-[12vw] md:px-[7vw] lg:px-[16vw] font-sans bg-skills-gradient clip-path-custom-3"
     >
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <motion.div
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
         <h2 className="text-4xl font-bold text-white">EDUCATION</h2>
         <div className="w-32 h-1 bg-purple-500 mx-auto mt-4"></div>
         <p className="text-gray-400 mt-4 text-lg font-semibold">
-         My educational journey reflects my continuous learning and growth. Below are the details of my academic background.
-
+          My educational journey reflects my continuous learning and growth.
+          Below are the details of my academic background.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Education Timeline */}
+      {/* Timeline Container */}
       <div className="relative">
-        {/* Vertical line */}
-        <div className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"></div>
+        {/* Vertical line animation */}
+        <motion.div
+          className="absolute sm:left-1/2 left-0 transform -translate-x-1/2 sm:-translate-x-0 w-1 bg-white h-full"
+          initial={{ height: 0 }}
+          whileInView={{ height: "100%" }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          viewport={{ once: true }}
+        ></motion.div>
 
-        {/* Education Entries */}
+        {/* Education Items */}
         {education.map((edu, index) => (
-          <div
+          <motion.div
             key={edu.id}
             className={`flex flex-col sm:flex-row items-center mb-16 ${
               index % 2 === 0 ? "sm:justify-start" : "sm:justify-end"
             }`}
+            initial={{
+              opacity: 0,
+              x: index % 2 === 0 ? -50 : 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
           >
-            
-
-            {/* Content Section */}
-            <div
-              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)] ${
-                index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"
-              } sm:ml-44 sm:mr-44 ml-8 transform transition-transform duration-300 hover:scale-105`}
+            {/* Card */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.3 }}
+              className={`w-full sm:max-w-md p-4 sm:p-8 rounded-2xl shadow-2xl border border-white bg-gray-900 backdrop-blur-md shadow-[0_0_20px_1px_rgba(130,69,236,0.3)]
+                ${index % 2 === 0 ? "sm:ml-0" : "sm:mr-0"}
+                sm:ml-44 sm:mr-44 ml-8`}
             >
-              {/* Flex container for image and text */}
               <div className="flex items-center space-x-6">
-                {/* School Logo/Image */}
-                <div className="w-24 h-16 bg-white rounded-md overflow-hidden">
-                  {/* <img
-                    src={edu.img}
-                    alt={edu.school}
-                    className="w-full h-full object-cover"
-                  /> */}
-                </div>
+                {/* Placeholder for School Logo */}
+                <div className="w-24 h-16 bg-white rounded-md overflow-hidden"></div>
 
-                {/* Degree, School Name, and Date */}
                 <div className="flex flex-col justify-between">
                   <div>
                     <h3 className="text-xl sm:text-xl font-semibold text-white">
@@ -59,15 +73,15 @@ const Education = () => {
                       {edu.school}
                     </h4>
                   </div>
-                  {/* Date at the bottom */}
+
                   <p className="text-sm text-gray-500 mt-2">{edu.date}</p>
                 </div>
               </div>
 
               <p className="mt-4 text-gray-400 font-bold">Grade: {edu.grade}</p>
               <p className="mt-4 text-gray-400">{edu.desc}</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </section>
