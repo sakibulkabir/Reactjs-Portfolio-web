@@ -53,7 +53,8 @@ import OnlineTutor from "./assets/work_logo/online-tutor.png"
 import NewsPortals from "./assets/work_logo/newsportals 1.png"
 import npmLogo from './assets/work_logo/blog.png';
 import FurnitureShop from "./assets/work_logo/furniture.png";
-import Animals from "./assets/work_logo/animals.png"
+import Animals from "./assets/work_logo/animals.png";
+import ShoppingCard from "./assets/work_logo/shippingCard.png"
 
 
 
@@ -246,6 +247,16 @@ export const SkillsInfo = [
     },
     {
       id: 3,
+      title: "Shopping Card Redux",
+      description:
+        "A modern React & Redux based Shopping Cart system featuring product listing, cart management, quantity control, and persistent state handling. Users can browse products, add items to the cart, and view real-time updates with a smooth UI and responsive design.",
+      image: ShoppingCard,
+      tags: ["React JS", "Redux", "Daisyui, Tailwind"],
+      github: "https://github.com/sakibulkabir/Shopping-Card-Redux",
+      webapp: "https://risat-shopping-card-redux2.netlify.app/",
+    },
+    {
+      id: 4,
       title: "Furniture Shop Website",
       description:
         "A modern and responsive furniture e-commerce website built with a clean UI and user-friendly layout. The website showcases various furniture products with detailed information, category-based filtering, and an attractive design focused on improving user experience. The project includes a fully responsive layout that adapts seamlessly to mobile, tablet, and desktop screens.",
@@ -255,7 +266,7 @@ export const SkillsInfo = [
       webapp: "https://risat-furniture-web.netlify.app/",
     },
     {
-      id: 4,
+      id: 5,
       title: "Animal Website",
       description:
         "A beautifully designed and responsive animal information website that showcases different animals with images, details, and categorized sections. The website is built with a clean layout, engaging visuals, and easy navigation to help users explore animals and learn about their characteristics.",
@@ -266,7 +277,7 @@ export const SkillsInfo = [
     },
     
     {
-      id: 5,
+      id: 6,
       title: "Online Tutor Website",
       description:
         "A responsive online tutoring website where students can find tutors, view courses, and book learning sessions. The platform focuses on clean UI, user-friendly navigation, and modern web technologies.",
@@ -276,7 +287,7 @@ export const SkillsInfo = [
       webapp: "https://risat-online-tutor1.netlify.app/",
     },
     {
-      id: 6,
+      id: 7,
       title: "Movie WebSite",
       description:
         "A responsive movie web application where users can browse movies, view details, and filter by category. Built with React and Tailwind CSS for a modern and interactive UI.",
@@ -286,7 +297,7 @@ export const SkillsInfo = [
       webapp: "https://risat-movie-website.netlify.app/",
     },
     {
-      id: 7,
+      id: 8,
       title: "Simple Blog App",
       description:
         "A minimalist blog application where users can read, create, edit, and delete posts. Built with React and Tailwind CSS, featuring a clean and responsive UI.",
